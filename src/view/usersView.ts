@@ -3,11 +3,11 @@ import PromptSync, { Prompt } from "prompt-sync";
 import { Database } from "../repository/Database";
 import { UserService } from "../service/usersService";
 
-export class MenuUsers{
-    private user : UserService
+export class MenuUsers {
+    private user: UserService
     private prompt: Prompt
 
-    constructor(){
+    constructor() {
         this.user = new UserService()
         this.prompt = PromptSync()
     }
@@ -36,7 +36,7 @@ export class MenuUsers{
         console.log('4- buscar infos de um user')
         console.log('5- deletar user')
         console.log('6- atualizar infos de um user')
-        console.log('0- sair do sistema')
+        console.log('0- sair de "USERS"')
         console.log('100- testar a conexão com o banco de dados')
         console.log(' ')
         let ask1 = 0
@@ -55,13 +55,16 @@ export class MenuUsers{
                 const login = this.prompt('Qual o login desse user? ')
                 const password = parseInt(this.prompt('Digite uma senha de 4 dígitos para esse novo user: '))
                 const email = this.prompt('Digite o email para o user: ')
-                await this.user.inserirUser(name, full_name, login, password, email )
+                await this.user.inserirUser(name, full_name, login, password, email)
                 return this.userMenu()
                 break
 
             case 3:
                 let p1 = await this.prompt('Informe o login do user por favor: ')
-                console.log(await this.user.exibirID(p1))
+                try {
+                    console.log(await this.user.exibirID(p1))
+                }
+                catch (e) { console.log('Erro no sistema', e) }
                 return this.userMenu()
                 break
 

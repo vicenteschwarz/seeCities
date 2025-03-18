@@ -1,11 +1,18 @@
 import { Devs } from "../entity/Devs"
+import { IDevs } from "../interfaces/Idevs"
 import { DevsRepository } from "../repository/devsRepository"
 import { Criptografia } from "../util/criptografia"
 import { Email } from "../util/email"
 
 
-export class DevsService {
+export class DevsService implements IDevs{
     private rep: DevsRepository
+    id_devs: number;
+    devs: string;
+    name_devs: string;
+    login_devs: string;
+    password_devs: number;
+    email: string;
 
     constructor() {
         this.rep = new DevsRepository()
@@ -13,11 +20,26 @@ export class DevsService {
     async listarDevs(): Promise<Devs[]> {
         return await this.rep.listarDevs()
     }
-    public async inserirDev(devs: string, name_devs: string, login_devs: string, password_devs: number, email_devs: string) {
+    public async inserirDev(devs: string, name_devs: string, login_devs: string, password_devs: number, email_devs: string): Promise<string | null> {
         //let email_verify :Devs[]=[]
         //email_verify = await this.rep.inserirDev(devs, name_devs, login_devs, password_devs, email)
         //let teste = Email.verificarEmail(email)
-
+        if (!devs) {
+            console.log('Nome Inválido!')
+            return null
+        }
+        if (!name_devs) {
+            console.log('Nome completo nao inserido!')
+            return null
+        }
+        if (!login_devs) {
+            console.log('Login não inserida!')
+            return null
+        }
+        if (password_devs.toString().length !== 4) {
+            console.log('A senha inserida precisa ser numérica, e possuir 4 digitos.')
+            return null
+        }
         if (Email.verificarEmail(email_devs) == false) {
             console.log(`Dev nao cadastrado no banco! Email Inválido!`)
             return null
@@ -28,7 +50,12 @@ export class DevsService {
     }
 
     public async exibirID(login_devs: string): Promise<number[]> {
-        return await this.rep.exibirID(login_devs)
+        let result = await this.rep.exibirID(login_devs)
+        if(result.length === 0){
+            throw new Error(`Login não cadastrado!`)
+            this.exibirID(login_devs)
+        }
+        else return result
     }
 
     public async buscarPorID(id_devs: number): Promise<Devs[]> {

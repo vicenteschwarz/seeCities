@@ -37,7 +37,7 @@ export class CidadeMenu {
         console.log('4- buscar infos de uma cidade')
         console.log('5- deletar cidade')
         console.log('6- atualizar infos de uma cidade')
-        console.log('0- sair do sistema')
+        console.log('0- sair de "CIDADES"')
         console.log('100- testar a conexão com o banco de dados')
         console.log(' ')
         let ask1 =0
@@ -62,7 +62,11 @@ export class CidadeMenu {
 
             case 3:
                 let p1 = await this.prompt('Informe a cidade por favor: ')
-                console.log(await this.cidade.exibirID(p1))
+                try{
+                    console.log(await this.cidade.exibirID(p1))
+                }
+                catch(e){console.log('Erro no sistema', e);
+                }
                 return this.cidadeMenu()
                 break
 

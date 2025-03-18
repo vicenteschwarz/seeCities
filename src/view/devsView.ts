@@ -37,7 +37,7 @@ export class MenuDevs{
         console.log('4- buscar infos de um dev')
         console.log('5- deletar dev')
         console.log('6- atualizar infos de um dev')
-        console.log('0- sair do sistema')
+        console.log('0- sair de "DEVS"')
         console.log('100- testar a conexão com o banco de dados')
         console.log(' ')
         let ask1 = 0
@@ -62,7 +62,10 @@ export class MenuDevs{
 
             case 3:
                 let p1 = await this.prompt('Informe o login do dev por favor: ')
+                try{
                 console.log(await this.dev.exibirID(p1))
+                }
+                catch(e){console.log('Erro no sistema', e)}
                 return this.devMenu()
                 break
 
