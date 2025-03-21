@@ -18,7 +18,6 @@ export class Cidade{
         this.climate = climate
         this.culture = culture
         this.tourist_att = tourist_att
-        
     }
 }
 /*

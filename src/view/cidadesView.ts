@@ -40,7 +40,7 @@ export class CidadeMenu {
         console.log('0- sair de "CIDADES"')
         console.log('100- testar a conexão com o banco de dados')
         console.log(' ')
-        let ask1 =0
+        let ask1 = 0
         ask1 = parseInt(this.prompt('qual opção desejas? '))
         switch (ask1) {
 
@@ -65,34 +65,40 @@ export class CidadeMenu {
 
                 //sem o try e catch, o code quebra ao exibir a mensagem do service(validação)
 
-               // try{
+                try {
                     console.log(await this.cidade.exibirID(p1))
-                //}
-                //catch(e){console.log('Erro no sistema', e.message);
-                //}
+                }
+                catch (e) {
+                    console.log('Erro no sistema -', e.message);
+                }
                 return this.cidadeMenu()
                 break
 
             case 4:
-                let p2 =  this.prompt('Informe a cidade por favor: ')
+                let p2 = this.prompt('Informe a cidade por favor: ')
                 let caçarID = await this.cidade.exibirID(p2)
                 console.table(await this.cidade.buscarPorID(caçarID[0]))
                 return this.cidadeMenu()
-                
+
             case 5:
-                let p3 =  this.prompt('Informe a cidade por favor: ')
+                let p3 = this.prompt('Informe a cidade por favor: ')
+                try {
                 let caçarID2 = await this.cidade.exibirID(p3)
-                await this.cidade.deletarCidade(caçarID2[0])
-                console.log('Cidade deletada!')
-                console.table(await this.cidade.listarCidades())
+                    await this.cidade.deletarCidade(caçarID2[0])
+                    console.log('Cidade deletada!')
+                    console.table(await this.cidade.listarCidades())
+                }
+                catch (e) {
+                    console.log('Erro no sistema -', e.message)
+                }
                 return this.cidadeMenu()
 
             case 6:
-                let p4 =  this.prompt('Informe a cidade por favor: ')
+                let p4 = this.prompt('Informe a cidade por favor: ')
                 let caçarID3 = await this.cidade.exibirID(p4)
                 console.table(await this.cidade.buscarPorID(caçarID3[0]))
-                let colunas =  this.prompt('O que desejas atualizar? ') //nome da coluna
-                let registro =  this.prompt('Para o que desejas atualizar? ') //para o que quer alterar o dado
+                let colunas = this.prompt('O que desejas atualizar? ') //nome da coluna
+                let registro = this.prompt('Para o que desejas atualizar? ') //para o que quer alterar o dado
                 await this.cidade.attInfosCidade(caçarID3[0], colunas, registro)
                 console.log('Informações atualizadas!')
                 return this.cidadeMenu()
@@ -105,11 +111,11 @@ export class CidadeMenu {
                 console.log('Conexão estabelecida corretamente!')
                 return this.cidadeMenu()
                 break
-                
+
             default:
                 await console.log("Voce nao selecionou nenhum item...")
                 return this.cidadeMenu()
 
-            }   //final do switc
+        }   //final do switc
     } //final do metodo
 }   //classe

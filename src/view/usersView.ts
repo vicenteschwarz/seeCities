@@ -61,10 +61,13 @@ export class MenuUsers {
 
             case 3:
                 let p1 = await this.prompt('Informe o login do user por favor: ')
+
+                //sem o try e catch, o code quebra ao exibir a mensagem do service(validação)
+
                 try {
                     console.log(await this.user.exibirID(p1))
                 }
-                catch (e) { console.log('Erro no sistema', e) }
+                catch (e) { console.log('Erro no sistema', e.message) }
                 return this.userMenu()
                 break
 

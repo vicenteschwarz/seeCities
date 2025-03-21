@@ -62,7 +62,7 @@ export class CidadeService implements ICidades {
     }
 
     public async deletarCidade(cod_cdc: number) {
-        let result = await this.rep.deletarCidade(cod_cdc)
+        await this.rep.deletarCidade(cod_cdc)
     }
 
     public async attInfosCidade(cod_cdc: number, coluna: string, registro: string) {
