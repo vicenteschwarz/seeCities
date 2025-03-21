@@ -61,23 +61,26 @@ export class CidadeMenu {
                 break
 
             case 3:
-                let p1 = await this.prompt('Informe a cidade por favor: ')
-                try{
+                let p1 = this.prompt('Informe a cidade por favor: ')
+
+                //sem o try e catch, o code quebra ao exibir a mensagem do service(validação)
+
+               // try{
                     console.log(await this.cidade.exibirID(p1))
-                }
-                catch(e){console.log('Erro no sistema', e);
-                }
+                //}
+                //catch(e){console.log('Erro no sistema', e.message);
+                //}
                 return this.cidadeMenu()
                 break
 
             case 4:
-                let p2 = await this.prompt('Informe a cidade por favor: ')
+                let p2 =  this.prompt('Informe a cidade por favor: ')
                 let caçarID = await this.cidade.exibirID(p2)
                 console.table(await this.cidade.buscarPorID(caçarID[0]))
                 return this.cidadeMenu()
                 
             case 5:
-                let p3 = await this.prompt('Informe a cidade por favor: ')
+                let p3 =  this.prompt('Informe a cidade por favor: ')
                 let caçarID2 = await this.cidade.exibirID(p3)
                 await this.cidade.deletarCidade(caçarID2[0])
                 console.log('Cidade deletada!')
@@ -85,11 +88,11 @@ export class CidadeMenu {
                 return this.cidadeMenu()
 
             case 6:
-                let p4 = await this.prompt('Informe a cidade por favor: ')
+                let p4 =  this.prompt('Informe a cidade por favor: ')
                 let caçarID3 = await this.cidade.exibirID(p4)
                 console.table(await this.cidade.buscarPorID(caçarID3[0]))
-                let colunas = await this.prompt('O que desejas atualizar? ') //nome da coluna
-                let registro = await this.prompt('Para o que desejas atualizar? ') //para o que quer alterar o dado
+                let colunas =  this.prompt('O que desejas atualizar? ') //nome da coluna
+                let registro =  this.prompt('Para o que desejas atualizar? ') //para o que quer alterar o dado
                 await this.cidade.attInfosCidade(caçarID3[0], colunas, registro)
                 console.log('Informações atualizadas!')
                 return this.cidadeMenu()

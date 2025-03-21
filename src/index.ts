@@ -13,7 +13,6 @@ import { Menu } from "./view/menu"
 import { MenuUsers } from "./view/usersView"
 
 
-
 /*
 let cdc1 = new CDC('São Paulo', 'São Paulo', 'Brasil', 'Quente', 'Bailao e Praia', 'Morumbis', 1)
 console.log(cdc1.exibirInfos())
@@ -41,15 +40,20 @@ async function teste_view_devs(){
 //teste_view_devs()
 
 //USERS ----------------------------------------------
-const view_User = new MenuUsers
+const view_User = new MenuUsers()
 async function teste_view_users(){
     await view_User.userMenu()
 }
 //teste_view_users()
 
 //------------------------------------------------------
-const view_MENU = new Menu
+const view_MENU = new Menu()
 async function teste_view_MENU(){
-    await view_MENU.menu()
+    try {
+        await view_MENU.menu()
+    } catch (error) {
+        // we'll proceed, but let's report it
+        console.log(error.message)
+    }
 }
-teste_view_MENU()
+    teste_view_MENU()
