@@ -1,29 +1,33 @@
 //PT-BR
 
+// Sistema de cadastro e visualização de cidades (See Cities)
+
 // Este é um projeto no qual permite o usuário visualizar uma cidade de seu interesse, onde após digitar a cidade que deseja, recebe em sua tela, os principais pontos turísticos, a cultura do local, o clima e outros fatores interessantes sobre o local, como restaurantes e hotéis.
 
 // Funções e utilidades do projeto/Requisitos: 
 
-// 1- Informar pontos turísticos.
+// 1- Informar pontos turísticos das cidades.
 
-// 2- Informar cada cidade que o ponto turístico se localiza
+// 2- Informar o país, estado e obviamente a cidade cadastrada e desejada.
 
-// 3- Informar o clima do local desejado (informações metereologicas)
+// 3- Informar o clima do local desejado (informações metereologicas gerais)
 
-// 4- Mostrar informações relevantes (restaurantes, pratos típicos, cultura..)
+// 4- Mostrar informações relevantes (ex: cultura..)
 
 //-------------------------------------------------------------------------------------------------------------------
 
 //EN
 
-// This is a project that allows the user to view a city of interest, where after typing the city they want, they receive on their screen the main tourist attractions, the culture of the place, the climate and other interesting factors about the place, such as restaurants and hotels.
+// City registration and visualization system (See Cities)
 
-// Project functions and utilities/Requirements: 
+// This is a project that allows the user to visualize a city of interest, where after typing the city they want, they receive on their screen the main tourist attractions, the culture of the place, the climate and other interesting factors about the place, such as restaurants and hotels.
 
-// 1- Inform tourist attractions.
+// Project functions and utilities/Requirements:
 
-// 2- Inform each city where the tourist spot is located
+// 1- Inform tourist attractions of the cities.
 
-// 3- Report the climate of the desired location (weather information)
+// 2- Inform the country, state and obviously the registered and desired city.
 
-// 4- Show relevant information (restaurants, typical dishes, culture...)
+// 3- Inform the climate of the desired place (general meteorological information)
+
+// 4- Show relevant information (e.g.: culture..)
