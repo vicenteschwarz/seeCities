@@ -55,7 +55,7 @@ export class MenuUsers {
                 const login = this.prompt('Qual o login desse user? ')
                 const password = parseInt(this.prompt('Digite uma senha de 4 dígitos para esse novo user: '))
                 const email = this.prompt('Digite o email para o user: ')
-                await this.user.inserirUser(name, full_name, login, password, email)
+                console.log(await this.user.inserirUser(name, full_name, login, password, email))
                 return this.userMenu()
                 break
 
@@ -69,7 +69,6 @@ export class MenuUsers {
                 }
                 catch (e) { console.log('Erro no sistema', e.message) }
                 return this.userMenu()
-                break
 
             case 4:
                 let p2 = await this.prompt('Informe o login do user por favor: ')
@@ -101,7 +100,6 @@ export class MenuUsers {
                 await Database.iniciarConexao()
                 console.log('Conexão estabelecida corretamente!')
                 return this.userMenu()
-                break
             default:
                 await console.log("Voce nao selecionou nenhum item...")
                 return this.userMenu()

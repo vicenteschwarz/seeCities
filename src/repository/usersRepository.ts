@@ -61,7 +61,7 @@ export class UsersRepository{
 
     async attInfosUser(id_users: number, coluna:string, registro:string):Promise<void>{
         let query = `update "PI"."Users" set ${coluna} = $1 where id_users = $2`
-        let result = await this.pool.query(query,[registro, id_users])
+        await this.pool.query(query,[registro, id_users])
     }
 }
 

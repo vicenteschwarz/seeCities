@@ -45,7 +45,7 @@ export class DevsService implements IDevs{
             return null
         }
         let email_verify = await this.rep.inserirDev(devs, name_devs, login_devs, password_devs, email_devs)
-        return ` Dev inserido com sucesso! ${email_verify}`
+        return `Dev inserido com sucesso!`
 
     }
 

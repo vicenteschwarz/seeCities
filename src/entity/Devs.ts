@@ -7,10 +7,10 @@ export class Devs{
     private devs: string
     private name_devs: string
     private login_devs: string
-    private password_devs: number
+    private password_devs: string
     private email : string
 
-    constructor(id_devs:number, devs:string, name_devs:string, login_devs:string, password_devs:number, email:string){
+    constructor(id_devs:number, devs:string, name_devs:string, login_devs:string, password_devs:string, email:string){
         this.id_devs = id_devs
         this.devs = devs
         this.name_devs = name_devs

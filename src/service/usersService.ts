@@ -44,7 +44,7 @@ export class UserService {
             return null
         }
         let email_verify = await this.rep.inserirUser(users, name_users, login_users, password_users, email_users)
-        return ` User inserido com sucesso! ${email_verify}`
+        return `User inserido com sucesso!`
 
     }
 

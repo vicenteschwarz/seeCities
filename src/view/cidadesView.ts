@@ -57,6 +57,7 @@ export class CidadeMenu {
                 const culture = this.prompt('Qual a cultura dessa cidade? ')
                 const tourist = this.prompt('Insira um ponto turístico: ')
                 await this.cidade.inserirCidade(city, state, country, climate, culture, tourist)
+                console.log('Cidade inserida com sucesso!')
                 return this.cidadeMenu()
                 break
 
@@ -72,7 +73,7 @@ export class CidadeMenu {
                     console.log('Erro no sistema -', e.message);
                 }
                 return this.cidadeMenu()
-                break
+                
 
             case 4:
                 let p2 = this.prompt('Informe a cidade por favor: ')
@@ -110,7 +111,7 @@ export class CidadeMenu {
                 await Database.iniciarConexao()
                 console.log('Conexão estabelecida corretamente!')
                 return this.cidadeMenu()
-                break
+                
 
             default:
                 await console.log("Voce nao selecionou nenhum item...")

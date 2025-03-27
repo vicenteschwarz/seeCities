@@ -56,7 +56,7 @@ export class MenuDevs{
                 const login = this.prompt('Qual o login desse desenvolvdor? ')
                 const password = parseInt(this.prompt('Digite uma senha de 4 dígitos para esse novo dev: '))
                 const email = this.prompt('Digite o email para o dev: ')
-                await this.dev.inserirDev(name, full_name, login, password, email )
+                console.log(await this.dev.inserirDev(name, full_name, login, password, email ))
                 return this.devMenu()
                 break
 

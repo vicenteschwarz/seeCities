@@ -50,7 +50,7 @@ async function teste_view_users(){
 const view_MENU = new Menu()
 async function teste_view_MENU(){
     try {
-        await view_MENU.menu()
+        await view_MENU.verificacaoDeAcesso()
     } catch (error) {
         // we'll proceed, but let's report it
         console.log(error.message)
