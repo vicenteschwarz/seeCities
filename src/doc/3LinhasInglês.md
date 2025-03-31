@@ -1,0 +1,1 @@
+My project is called “SeeCities”, and as the name suggests, the user can search for different cities around the world, and from this search, he can see a lot of interesting information, like culture, tourist attractions, climate, and obviously, the country from this city.
