@@ -2,7 +2,7 @@
 
 // Sistema de cadastro e visualização de cidades (See Cities)
 
-// Este é um projeto no qual permite o usuário visualizar uma cidade de seu interesse, onde após digitar a cidade que deseja, recebe em sua tela, os principais pontos turísticos, a cultura do local, o clima e outros fatores interessantes sobre o local, como restaurantes e hotéis.
+// Este é um projeto no qual permite o usuário visualizar uma cidade de seu interesse, onde após digitar a cidade que deseja, recebe em sua tela, os principais pontos turísticos, a cultura do local, o clima e outros fatores interessantes sobre o local.
 
 // Funções e utilidades do projeto/Requisitos: 
 
